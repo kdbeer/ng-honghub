@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: './components/core/login/login.module#LoginModule'
+    loadChildren: './auth/auth.module#AuthModule'
   },
   {
     path: 'management',
-    loadChildren: './components/core/mapping/mapping.module#MappingModule'
+    loadChildren: './components/core/mapping/mapping.module#MappingModule',
+    canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -21,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
