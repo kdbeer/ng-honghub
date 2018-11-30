@@ -16,7 +16,7 @@ export class AuthService {
       first_name: 'firstname',
       last_name: 'lastname',
       role: 'user',
-      username: 'user001'
+      username: json.username
     };
     return of({ message_code: '00', message_description: '', data: user }); // TODO: implement api here
   }

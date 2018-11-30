@@ -8,6 +8,7 @@ import { AuthEffects } from './auth.effects';
 import * as fromAuth from './auth.reducer';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -15,7 +16,8 @@ import { AuthGuard } from './guards/auth.guard';
     CommonModule,
     AuthRoutingModule,
     EffectsModule.forFeature([AuthEffects]),
-    StoreModule.forFeature('auth', fromAuth.reducer)
+    StoreModule.forFeature('auth', fromAuth.reducer),
+    ReactiveFormsModule
   ]
 })
 export class AuthModule {
