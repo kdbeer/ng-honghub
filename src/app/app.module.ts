@@ -10,8 +10,10 @@ import {environment} from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthGuard} from './auth/guards/auth.guard'
 import {ReactiveFormsModule} from '@angular/forms';
+import { HeadersComponent } from './components/headers/headers.component';
+import { SidebarsComponent } from './components/sidebars/sidebars.component';
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, HeadersComponent, SidebarsComponent],
     imports: [
         BrowserModule, AppRoutingModule, ReactiveFormsModule,
         EffectsModule.forRoot([]),
