@@ -13,6 +13,11 @@ const routes: Routes = [
     // canActivate: [AuthGuard]
   },
   {
+    path: 'users',
+    loadChildren: './user/user.module#UserModule'
+    // canActivate: [AuthGuard]
+  },
+  {
     path: 'management',
     loadChildren: './components/core/mapping/mapping.module#MappingModule',
     canActivate: [AuthGuard]

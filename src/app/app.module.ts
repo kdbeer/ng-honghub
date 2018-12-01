@@ -14,6 +14,7 @@ import { HeadersComponent } from './components/headers/headers.component';
 import { SidebarsComponent } from './components/sidebars/sidebars.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { ToastModule } from './toast/toast.module';
 @NgModule({
   declarations: [AppComponent, HeadersComponent, SidebarsComponent],
   imports: [
@@ -21,6 +22,7 @@ import { HttpModule } from '@angular/http';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastModule,
     HttpModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([]),

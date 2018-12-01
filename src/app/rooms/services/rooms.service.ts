@@ -16,4 +16,11 @@ export class RoomsService {
       headers: jsonHeader
     });
   }
+
+  getRooms(json) {
+    return this.http.get(this._env.API_URL + this._env.APIS.GET_ROOM_LIST, {
+      headers: jsonHeader
+    });
+  }
+
 }

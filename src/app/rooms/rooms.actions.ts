@@ -6,7 +6,8 @@ export enum RoomsActionTypes {
   AddRoomClose = '[Rooms] Load Room Close',
   AddRoomConfirm = '[Rooms] Add Room Confirm',
   AddRoomSuccess = '[Rooms] Load Room Success',
-  AddRoomFailed = '[Rooms] Load Room Failed'
+  AddRoomFailed = '[Rooms] Load Room Failed',
+  UserStartGetRoom = '[Rooms] Load Start Get Room'
 }
 
 export class LoadRooms implements Action {
@@ -36,10 +37,15 @@ export class AddRoomFailed implements Action {
   constructor(public payload: { messageDescription: string }) {}
 }
 
+export class UserStartGetRoom implements Action {
+  readonly type = RoomsActionTypes.UserStartGetRoom;
+}
+
 export type RoomsActions =
   | LoadRooms
   | AddRoomOpen
   | AddRoomClose
   | AddRoomConfirm
   | AddRoomSuccess
-  | AddRoomFailed;
+  | AddRoomFailed
+  | UserStartGetRoom;

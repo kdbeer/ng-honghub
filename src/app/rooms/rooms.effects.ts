@@ -17,8 +17,6 @@ export class RoomsEffects {
     ofType<AddRoomConfirm>(RoomsActionTypes.AddRoomConfirm),
     map(action => action.payload),
     mergeMap(payload => {
-      console.log(payload.newRoom);
-      console.log('>>>>>>>>>>>>>>>');
       return this.room.addNewRoom(payload.newRoom);
     }),
     map(resp => {

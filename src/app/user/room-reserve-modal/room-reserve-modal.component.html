@@ -1,0 +1,140 @@
+<div class="modal animated fadeIn" [ngClass]="{ 'is-active': open$ | async }">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">ค้นหาห้อง</p>
+    </header>
+    <section class="modal-card-body">
+      <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">ตึก</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select formControlName="building">
+                      <option value="kbtg">KBTG</option>
+                      <option value="cwn2">CWN2</option>
+                      <option value="pahol">พหลโยธิน</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">ประเภทห้อง</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select formControlName="type">
+                      <option value="">Please select room type</option>
+                      <option value="whiteboard">Whiteboard</option>
+                      <option value="projector">Projector</option>
+                      <option value="video_conference">Video Conference</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">จำนวนคน</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="is-fullwidth">
+                    <input
+                      formControlName="capacity"
+                      class="input"
+                      type="number"
+                      placeholder="Text input"
+                      min="0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">เวลาเริ่ม</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="sis-fullwidth">
+                    <input
+                      formControlName="start"
+                      class="input"
+                      type="text"
+                      placeholder="Text input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">ระยะเวลา</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="sis-fullwidth">
+                    <input
+                      formControlName="duration"
+                      class="input"
+                      type="number"
+                      min="0"
+                      max="8"
+                      step=".5"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field is-grouped is-grouped-right">
+            <p class="control">
+              <button
+                type="submit"
+                class="button is-primary"
+                [ngClass]="{ 'is-outlined': !form.valid }"
+              >
+                Confirm
+              </button>
+            </p>
+            <p class="control" (click)="searchPanelUnActivated($event)">
+              <a class="button is-outlined"> Cancel </a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>
