@@ -8,6 +8,11 @@ const routes: Routes = [
     loadChildren: './auth/auth.module#AuthModule'
   },
   {
+    path: 'rooms',
+    loadChildren: './rooms/rooms.module#RoomsModule'
+    // canActivate: [AuthGuard]
+  },
+  {
     path: 'management',
     loadChildren: './components/core/mapping/mapping.module#MappingModule',
     canActivate: [AuthGuard]
