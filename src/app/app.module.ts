@@ -12,14 +12,18 @@ import { AuthGuard } from './auth/guards/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeadersComponent } from './components/headers/headers.component';
 import { SidebarsComponent } from './components/sidebars/sidebars.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [AppComponent, HeadersComponent, SidebarsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    EffectsModule.forRoot([]),
+    HttpClientModule,
+    HttpModule,
     StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [AuthGuard],

@@ -1,12 +1,33 @@
-<div class="modal is-active">
+<div class="modal animated fadeIn" [ngClass]="{ 'is-active': open$ | async }">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Add New Rooms</p>
-      <button class="delete" aria-label="close"></button>
+      <p class="modal-card-title">Add New Room</p>
     </header>
     <section class="modal-card-body">
-      <form action="">
+      <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">Name</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="is-fullwidth">
+                    <input
+                      class="input"
+                      formControlName="name"
+                      type="text"
+                      placeholder="Text input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="column">
           <div class="field is-horizontal">
             <div class="field-label is-normal">
@@ -16,11 +37,11 @@
               <div class="field">
                 <div class="control">
                   <div class="select is-fullwidth">
-                    <select>
-                      <option>Please select room type</option>
-                      <option>Whiteboard</option>
-                      <option>Projector</option>
-                      <option>Video Conference</option>
+                    <select formControlName="type">
+                      <option value="">Please select room type</option>
+                      <option value="whiteboard">Whiteboard</option>
+                      <option value="projector">Projector</option>
+                      <option value="video_conference">Video Conference</option>
                     </select>
                   </div>
                 </div>
@@ -38,8 +59,9 @@
               <div class="field">
                 <div class="control">
                   <div class="select is-fullwidth">
-                    <select>
-                      <option>KBTG</option>
+                    <select formControlName="building">
+                      <option value="kbtg">KBTG</option>
+                      <option value="cwn2">CWN2</option>
                     </select>
                   </div>
                 </div>
@@ -56,10 +78,13 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <div class="select is-fullwidth">
-                    <select>
-                      <option>Floor 11</option>
-                    </select>
+                  <div class="sis-fullwidth">
+                    <input
+                      formControlName="floor"
+                      class="input"
+                      type="text"
+                      placeholder="Text input"
+                    />
                   </div>
                 </div>
               </div>
@@ -70,16 +95,18 @@
         <div class="column">
           <div class="field is-horizontal">
             <div class="field-label is-normal">
-              <label class="label subtitle is-6">Type</label>
+              <label class="label subtitle is-6">Capacity</label>
             </div>
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <div class="select is-fullwidth">
-                    <select>
-                      <option>Available Only</option>
-                      <option>All Type</option>
-                    </select>
+                  <div class="is-fullwidth">
+                    <input
+                      formControlName="capacity"
+                      class="input"
+                      type="number"
+                      placeholder="Text input"
+                    />
                   </div>
                 </div>
               </div>
@@ -89,8 +116,18 @@
 
         <div class="column">
           <div class="field is-grouped is-grouped-right">
-            <p class="control"><a class="button is-info"> Confirm </a></p>
-            <p class="control"><a class="button is-light"> Cancel </a></p>
+            <p class="control">
+              <button
+                type="submit"
+                class="button is-primary"
+                [ngClass]="{ 'is-outlined': !form.valid }"
+              >
+                Confirm
+              </button>
+            </p>
+            <p class="control" (click)="closeModal($event)">
+              <a class="button is-outlined"> Cancel </a>
+            </p>
           </div>
         </div>
       </form>
