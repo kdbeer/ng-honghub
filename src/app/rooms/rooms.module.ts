@@ -8,9 +8,10 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { StoreModule } from '@ngrx/store';
 import * as fromRooms from './rooms.reducers';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
+import { RoomRegisterComponent } from './room-register/room-register.component';
 
 @NgModule({
-  declarations: [RoomsComponent, SearchPanelComponent],
+  declarations: [RoomsComponent, SearchPanelComponent, RoomRegisterComponent],
   imports: [
     CommonModule,
     NgxDatatableModule,
