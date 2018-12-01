@@ -1,14 +1,18 @@
-<ngx-datatable
-  class="material"
-  [rows]="rows"
-  [columns]="columns"
-  [columnMode]="'force'"
-  [headerHeight]="50"
-  [footerHeight]="50"
-  [rowHeight]="'auto'"
-  (page)="setPage($event)"
-  [count]="page.totalElements"
-  [offset]="page.pageNumber"
-  [limit]="page.size"
->
-</ngx-datatable>
+<app-search-panel></app-search-panel>
+
+<div class="u-margin-top-small">
+  <ngx-datatable
+    class="material"
+    [rows]="rows"
+    [columns]="columns"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    (page)="setPage($event)"
+    [count]="page.totalElements"
+    [offset]="page.pageNumber"
+    [limit]="page.size"
+  >
+  </ngx-datatable>
+</div>

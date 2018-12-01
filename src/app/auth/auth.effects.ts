@@ -55,7 +55,7 @@ export class AuthEffects {
     tap(action => {
       console.log('User', action.payload);
       if (action.payload.user != null) {
-        this._router.navigate(['management']);
+        this._router.navigate(['rooms']);
       }
       localStorage.setItem('user', JSON.stringify(action.payload.user));
     })
