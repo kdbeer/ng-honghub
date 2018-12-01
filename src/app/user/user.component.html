@@ -1,0 +1,27 @@
+
+<h1 class="subtitle is-2">Room Reservation</h1>
+<!--
+  <app-search-panel></app-search-panel>
+  <app-room-register></app-room-register>
+-->
+
+<app-room-reserve-modal></app-room-reserve-modal>
+<app-room-reserve></app-room-reserve>
+
+<div class="u-margin-top-small">
+  <ngx-datatable
+    class="material"
+    [rows]="rows"
+    [columns]="columns"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [count]="page.totalElements"
+    [offset]="page.pageNumber"
+    [limit]="page.size"
+  >
+  </ngx-datatable>
+</div>
+
+<!-- (page)="setPage($event)" -->

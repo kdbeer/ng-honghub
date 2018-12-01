@@ -1,0 +1,109 @@
+.toast {
+  width: 100%;
+  min-height: 55px;
+  margin-top: 10px;
+  background-color: #689dc1;
+
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  color: white;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+
+  z-index: 99;
+
+  .icon {
+    background-color: #558aaf;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .icon-svg {
+      fill: currentColor;
+      width: 36px;
+      height: 36px;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      opacity: 0.95;
+    }
+  }
+
+  &__content {
+    padding: 3px 7px;
+    position: relative;
+  }
+
+  &__danger {
+    background-color: #cc3238;
+    .icon {
+      // background: #ad0000;
+      background: darken($color: #ad0000, $amount: 7%);
+    }
+  }
+
+  &__success {
+    background-color: #00c56e;
+    .icon {
+      background-color: #00ad5e;
+    }
+  }
+
+  &__warning {
+    background-color: #d19c27;
+    .icon {
+      background: darken($color: #d19c27, $amount: 7%);
+    }
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.close-me {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 3px;
+  font-size: 30px;
+  line-height: 20px;
+  cursor: pointer;
+
+  &:hover {
+    color: #eeeeee;
+  }
+}

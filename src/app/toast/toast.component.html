@@ -1,0 +1,3 @@
+<div class="toast-panel">
+  <toast-item class="item" *ngFor="let ti of toastItems" [message]="ti" (toastClosed)="onToastClosed($event)"></toast-item>
+</div>

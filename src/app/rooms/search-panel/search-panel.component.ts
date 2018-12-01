@@ -1,4 +1,7 @@
+import { AppState } from './../../reducers/index';
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
+import { AddRoomOpen } from '../rooms.actions';
 
 @Component({
   selector: 'app-search-panel',
@@ -6,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-panel.component.scss']
 })
 export class SearchPanelComponent implements OnInit {
-  constructor() {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {}
+
+  addNewRooms(e) {
+    this.store.dispatch(new AddRoomOpen());
+  }
 }
