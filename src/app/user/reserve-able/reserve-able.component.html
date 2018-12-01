@@ -1,3 +1,49 @@
-<p>
-  reserve-able works!
-</p>
+<app-room-reserve-modal></app-room-reserve-modal>
+<p class="subtitle is-4">ผลการค้นหาห้องที่ว่าง</p>
+
+<div class="card u-padding-small-1">
+  <div class="columns">
+    <div class="column"></div>
+    <div class="column">
+      <div class="field is-grouped is-grouped-right">
+        <p class="control">
+          <a
+            class="button is-primary"
+            [ngClass]="{ 'is-outlined': selected.length === 0 }"
+          >
+            จองห้อง
+          </a>
+        </p>
+        <p class="control"><a class="button is-outlined"> ยกเลิก </a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main u-margin-top-small"></div>
+<ngx-datatable
+  class="material"
+  [rows]="rows"
+  [columnMode]="'force'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="'auto'"
+  [limit]="5"
+  [selected]="selected"
+  [selectionType]="'checkbox'"
+  [selectAllRowsOnPage]="false"
+>
+  <ngx-datatable-column
+    [width]="30"
+    [sortable]="false"
+    [canAutoResize]="false"
+    [draggable]="false"
+    [resizeable]="false"
+    [headerCheckboxable]="true"
+    [checkboxable]="true"
+  >
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Name"></ngx-datatable-column>
+  <ngx-datatable-column name="Gender"></ngx-datatable-column>
+  <ngx-datatable-column name="Company"></ngx-datatable-column>
+</ngx-datatable>
