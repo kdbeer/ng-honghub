@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+.box-shadow {
+  box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
+}
+
+.u-padding-small {
+  padding: 15px 0;
+}
+
+.u-margin-top-small {
+  margin-top: 15px;
+}
