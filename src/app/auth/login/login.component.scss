@@ -2,6 +2,15 @@
 // -moz-animation: AnimationName 30s ease infinite;
 // animation: AnimationName 30s ease infinite;
 
+.full-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
 .bg-loop {
   width: 100wh;
   height: 90vh;
