@@ -57,7 +57,7 @@ jobs:
   deploy:
     working_directory: ~/project
     docker:
-      - image: circleci/node:6.10-browsers
+      - image: circleci/circleci/node:10.13.0
     steps:
       # Log the current branch
       - run:
