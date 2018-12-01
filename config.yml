@@ -1,0 +1,27 @@
+version: 2
+
+# List of jobs
+jobs:
+    # The build job
+    build:
+        working_directory: ~/project
+        docker:
+            - image: circleci/node:6.10-browsers
+        steps:
+           # Steps to be added
+
+    # The deploy job
+    deploy:
+        working_directory: ~/project
+        docker:
+            - image: circleci/node:6.10-browsers
+        steps:
+            # Steps to be added
+
+workflows:
+    version: 2
+    # The build and deploy workflow
+    build_and_deploy:
+        jobs:
+            - build
+            - deploy
