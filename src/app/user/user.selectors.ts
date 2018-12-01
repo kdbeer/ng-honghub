@@ -9,3 +9,10 @@ export const selectReserveModalOpen = createSelector(
     return reserve.open_modal;
   }
 );
+
+export const selectReserveRequest = createSelector(
+  reserveState,
+  reserve => {
+    return reserve.confirm_reserve_modal;
+  }
+);

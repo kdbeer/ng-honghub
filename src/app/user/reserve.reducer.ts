@@ -3,12 +3,14 @@ import { ReserveActionTypes, ReserveActions } from './reserve.actions';
 
 export interface ReserveState {
   open_modal: boolean;
+  confirm_reserve_modal: boolean;
   form: any;
   available: any[];
 }
 
 export const initialState: ReserveState = {
   open_modal: false,
+  confirm_reserve_modal: false,
   form: undefined,
   available: undefined
 };
@@ -32,6 +34,10 @@ export function reducer(
         open_modal: false,
         available: action.payload.available
       };
+    case ReserveActionTypes.ReserveRequested:
+      return { ...state, confirm_reserve_modal: true };
+    case ReserveActionTypes.ReserveConfirm:
+      return { ...state, confirm_reserve_modal: false };
     default:
       return state;
   }
