@@ -28,13 +28,13 @@ jobs:
           paths:
             - node_modules
       # Lint the source code
-      - run:
-          name: Linting
-          command: npm run lint
+      # - run:
+      #     name: Linting
+      #     command: npm run lint
       # Test the source code
-      - run:
-          name: Testing
-          command: npm run test
+      # - run:
+      #     name: Testing
+      #     command: npm run test
       # Build project with different configuration based on
       # the current branch
       - run:
@@ -80,11 +80,11 @@ jobs:
           name: Deploy to S3
           command: |
             if [ "${CIRCLE_BRANCH}" == "develop" ]; then
-                aws --region eu-west-2 s3 sync dist s3://project-dev/ --delete
+                aws --region ap-southeast-1 s3 sync dist s3://hkt-project-dev/ --delete
             elif [ "${CIRCLE_BRANCH}" == "staging" ]; then
-                aws --region eu-west-2 s3 sync dist s3://project-qa/ --delete
+                aws --region ap-southeast-1 s3 sync dist s3://hkt-project-qa/ --delete
             elif [ "${CIRCLE_BRANCH}" == "master" ]; then
-                aws --region eu-west-2 s3 sync dist s3://project/ --delete
+                aws --region ap-southeast-1 s3 sync dist s3://hkt-project/ --delete
             fi
 
 workflows:
