@@ -6,7 +6,8 @@ export enum ReserveActionTypes {
   CloseSearchModal = '[Reserve] Close Search Modal',
   ConfirmSearchAvailable = '[Reserve] Confirm Search Available',
   SearchAvailableSuccess = '[Reserve] Search Available Success',
-  SearchAvailableFailed = '[Reserve] Search Available Failed'
+  SearchAvailableFailed = '[Reserve] Search Available Failed',
+  RoomSelected = '[Reserve] Room Selected'
 }
 
 export class LoadReserves implements Action {
@@ -36,10 +37,16 @@ export class SearchAvailableFailed implements Action {
   constructor(public payload: { message: string }) {}
 }
 
+export class RoomSelected implements Action {
+  readonly type = ReserveActionTypes.RoomSelected;
+  constructor(public payload: { selected: string[] }) {}
+}
+
 export type ReserveActions =
   | LoadReserves
   | OpenSearchModal
   | CloseSearchModal
   | ConfirmSearchAvailable
   | SearchAvailableSuccess
-  | SearchAvailableFailed;
+  | SearchAvailableFailed
+  | RoomSelected;
