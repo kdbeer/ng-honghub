@@ -1,5 +1,8 @@
+import { AppState } from './../../reducers/index';
 import { Component, OnInit } from '@angular/core';
 import { Page } from 'app/models/page';
+import { Store } from '@ngrx/store';
+import { ReserveRequested } from '../reserve.actions';
 
 @Component({
   selector: 'app-reserve-able',
@@ -19,7 +22,7 @@ export class ReserveAbleComponent implements OnInit {
   page: Page;
   selected = [];
 
-  constructor() {
+  constructor(private store: Store<AppState>) {
     this.rows = [
       { name: 'Austin', gender: 'Male', room: 'Swimlane' },
       { name: 'Dany', gender: 'Male', room: 'KFC' },
@@ -34,4 +37,11 @@ export class ReserveAbleComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  reserveRequest() {
+    if (this.selected.length <= 0) {
+      return;
+    }
+    this.store.dispatch(new ReserveRequested());
+  }
 }
