@@ -12,6 +12,7 @@ import {
 import { Router } from '@angular/router';
 import { RoomsService } from 'app/rooms/services/rooms.service';
 import { IResponse } from 'app/rooms';
+import { ToastService } from 'app/toast/service/toast.service';
 
 @Injectable()
 export class ReserveEffects {
@@ -53,13 +54,14 @@ export class ReserveEffects {
     ofType<ConfirmReserve>(ReserveActionTypes.ConfirmReserve),
     map(() => {
       this.router.navigateByUrl('users');
-      console.log('Implement Toast');
+      this.ts.showSuccessMessage('บันทึกข้อมูลสำเร็จ');
     })
   );
 
   constructor(
     private actions$: Actions,
     private router: Router,
-    private room: RoomsService
+    private room: RoomsService,
+    private ts: ToastService
   ) {}
 }

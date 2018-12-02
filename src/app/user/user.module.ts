@@ -1,3 +1,4 @@
+import { ToastModule } from './../toast/toast.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RoomReserveComponent } from './room-reserve/room-reserve.component';
 import { NgModule } from '@angular/core';

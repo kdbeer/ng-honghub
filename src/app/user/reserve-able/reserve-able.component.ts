@@ -26,6 +26,7 @@ export class ReserveAbleComponent implements OnInit {
   page: Page;
   selected = [];
   data$: Observable<AvalibleRoom[]>;
+  display = [];
   // rows:
 
   constructor(private store: Store<AppState>) {
@@ -44,9 +45,12 @@ export class ReserveAbleComponent implements OnInit {
 
   ngOnInit() {
     this.data$ = this.store.pipe(select(selectAvailableRoomList));
-    // this.store.pipe(select(selectAvailableRoomList)).subscribe(res => {
-    //   console.log(res);
-    // });
+    this.store.pipe(select(selectAvailableRoomList)).subscribe(res => {
+      this.display = res;
+      this.display = this.display.filter(
+        r => r.capacity !== '' && r.capacity > 0
+      );
+    });
   }
 
   reserveRequest() {

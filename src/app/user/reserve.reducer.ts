@@ -15,6 +15,7 @@ export interface ReserveState extends EntityState<AvalibleRoom> {
   confirm_reserve_modal: boolean;
   form: any;
   available: any;
+  roomToAdd: any;
 }
 
 export const adapter: EntityAdapter<AvalibleRoom> = createEntityAdapter<
@@ -25,7 +26,8 @@ export const initialState: ReserveState = adapter.getInitialState({
   open_modal: false,
   confirm_reserve_modal: false,
   form: undefined,
-  available: undefined
+  available: undefined,
+  roomToAdd: undefined
 });
 
 // export interface ReserveState {
@@ -50,7 +52,7 @@ export function reducer(
     case ReserveActionTypes.OpenSearchModal:
       return { ...state, open_modal: true };
     case ReserveActionTypes.CloseSearchModal:
-      return { ...state, open_modal: false, confirm_reserve_modal: false };
+      return { ...state, open_modal: false };
     case ReserveActionTypes.ConfirmSearchAvailable:
       return { ...state, open_modal: false };
     case ReserveActionTypes.SearchAvailableFailed:
@@ -70,11 +72,15 @@ export function reducer(
     case ReserveActionTypes.ReserveConfirm:
       return { ...state, confirm_reserve_modal: false };
     case ReserveActionTypes.ConfirmReserveClosed:
-      return { ...state, confirm_reserve_modal: false };
+      return { ...state };
     case ReserveActionTypes.CloseReserveModal:
       return { ...state, confirm_reserve_modal: false };
     case ReserveActionTypes.ConfirmReserve:
-      return { ...state, confirm_reserve_modal: false };
+      return {
+        ...state,
+        confirm_reserve_modal: false,
+        roomToAdd: action.payload.reserve
+      };
     default:
       return state;
   }

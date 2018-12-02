@@ -22,14 +22,15 @@ import {
 export class RoomReserveModalComponent implements OnInit {
   open$: Observable<boolean>;
   form: FormGroup;
+  today = new Date();
 
   constructor(private store: Store<AppState>, private fb: FormBuilder) {
     this.form = this.fb.group({
       building: ['kbtg', [Validators.required, Validators.minLength(1)]],
       type: ['', [Validators.required, Validators.minLength(1)]],
-      capacity: [0],
+      capacity: [2],
       duration: [0.5],
-      start: ['', [Validators.required]]
+      start: [this.today, [Validators.required]]
     });
   }
 
