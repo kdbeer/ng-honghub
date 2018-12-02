@@ -1,7 +1,5 @@
-import { Action } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { ReserveActionTypes, ReserveActions } from './reserve.actions';
-import { stat } from 'fs';
 
 export interface AvalibleRoom {
   name: string;
