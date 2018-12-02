@@ -73,6 +73,8 @@ export function reducer(
       return { ...state, confirm_reserve_modal: false };
     case ReserveActionTypes.CloseReserveModal:
       return { ...state, confirm_reserve_modal: false };
+    case ReserveActionTypes.ConfirmReserve:
+      return { ...state, confirm_reserve_modal: false };
     default:
       return state;
   }

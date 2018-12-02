@@ -16,7 +16,7 @@ import { selectData, selectAvailableRoomList } from '../user.selectors';
 export class ReserveAbleComponent implements OnInit {
   columns = [
     { name: '#', prop: 'id', maxWidth: 50 },
-    { name: 'Room', prop: 'room' },
+    { name: 'Name', prop: 'room' },
     { name: 'Start Time', prop: 'start_time' },
     { name: 'End Time', prop: 'end_time' },
     { name: 'Reserver', prop: 'reserver' }

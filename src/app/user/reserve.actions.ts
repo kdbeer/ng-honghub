@@ -12,7 +12,8 @@ export enum ReserveActionTypes {
   ReserveConfirm = '[Reserve] Reserve Confirm',
   ConfirmReserveClosed = '[Reserve] Confirm Reserve Closed',
   BackToHome = '[Reserve] Back To Home',
-  CloseReserveModal = '[Reserve] Close Reserve Modal'
+  CloseReserveModal = '[Reserve] Close Reserve Modal',
+  ConfirmReserve = '[Reserve] Confirm Reserve'
 }
 
 export class LoadReserves implements Action {
@@ -68,6 +69,11 @@ export class CloseReserveModal implements Action {
   readonly type = ReserveActionTypes.CloseReserveModal;
 }
 
+export class ConfirmReserve implements Action {
+  readonly type = ReserveActionTypes.ConfirmReserve;
+  constructor(public payload: { reserve: any }) {}
+}
+
 export type ReserveActions =
   | LoadReserves
   | OpenSearchModal
@@ -80,4 +86,5 @@ export type ReserveActions =
   | ReserveConfirm
   | ConfirmReserveClosed
   | BackToHome
-  | CloseReserveModal;
+  | CloseReserveModal
+  | ConfirmReserve;

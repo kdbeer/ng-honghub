@@ -1,4 +1,9 @@
-import { CloseReserveModal } from './../reserve.actions';
+import { AvalibleRoom } from './../reserve.reducer';
+import {
+  CloseReserveModal,
+  ConfirmSearchAvailable,
+  ConfirmReserve
+} from './../reserve.actions';
 import { AppState } from 'app/reducers';
 import { Store, select } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
@@ -36,7 +41,14 @@ export class ConfirmReserveModalComponent implements OnInit {
     }
 
     console.log(e);
-    // this.store.dispatch(new ConfirmSearchAvailable({ json: e }));
+    const newReserve: AvalibleRoom = {
+      name: 'TEST',
+      building: 'KBTG',
+      capacity: 10,
+      type: 'White Board'
+    };
+
+    this.store.dispatch(new ConfirmReserve({ reserve: newReserve }));
   }
 
   close(e) {

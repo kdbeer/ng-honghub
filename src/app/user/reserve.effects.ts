@@ -6,7 +6,8 @@ import {
   ReserveActionTypes,
   ConfirmSearchAvailable,
   SearchAvailableFailed,
-  BackToHome
+  BackToHome,
+  ConfirmReserve
 } from './reserve.actions';
 import { Router } from '@angular/router';
 import { RoomsService } from 'app/rooms/services/rooms.service';
@@ -44,6 +45,15 @@ export class ReserveEffects {
       }
       console.log(json.data);
       return new SearchAvailableSuccess({ available: json.data });
+    })
+  );
+
+  @Effect({ dispatch: false })
+  confirmReserve$ = this.actions$.pipe(
+    ofType<ConfirmReserve>(ReserveActionTypes.ConfirmReserve),
+    map(() => {
+      this.router.navigateByUrl('users');
+      console.log('Implement Toast');
     })
   );
 
