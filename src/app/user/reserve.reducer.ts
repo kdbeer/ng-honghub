@@ -1,17 +1,48 @@
 import { Action } from '@ngrx/store';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { ReserveActionTypes, ReserveActions } from './reserve.actions';
+import { stat } from 'fs';
 
-export interface ReserveState {
-  open_modal: boolean;
-  form: any;
-  available: any[];
+export interface AvalibleRoom {
+  name: string;
+  building: string;
+  type: string;
+  capacity: number;
 }
 
-export const initialState: ReserveState = {
+export interface ReserveState extends EntityState<AvalibleRoom> {
+  open_modal: boolean;
+  confirm_reserve_modal: boolean;
+  form: any;
+  available: any;
+  roomToAdd: any;
+}
+
+export const adapter: EntityAdapter<AvalibleRoom> = createEntityAdapter<
+  AvalibleRoom
+>();
+
+export const initialState: ReserveState = adapter.getInitialState({
   open_modal: false,
+  confirm_reserve_modal: false,
   form: undefined,
-  available: undefined
-};
+  available: undefined,
+  roomToAdd: undefined
+});
+
+// export interface ReserveState {
+//   open_modal: boolean;
+//   confirm_reserve_modal: boolean;
+//   form: any;
+//   available: any[];
+// }
+
+// export const initialState: ReserveState = {
+//   open_modal: false,
+//   confirm_reserve_modal: false,
+//   form: undefined,
+//   available: undefined
+// };
 
 export function reducer(
   state = initialState,
@@ -27,12 +58,37 @@ export function reducer(
     case ReserveActionTypes.SearchAvailableFailed:
       return { ...state, open_modal: false };
     case ReserveActionTypes.SearchAvailableSuccess:
+      return adapter.addAll(action.payload.available, {
+        ...state,
+        open_modal: false
+      });
+    // return adapter.addAll(...state,  ) {
+    //   ...state,
+    //   open_modal: false,
+    //   available: action.payload.available
+    // };
+    case ReserveActionTypes.ReserveRequested:
+      return { ...state, confirm_reserve_modal: true };
+    case ReserveActionTypes.ReserveConfirm:
+      return { ...state, confirm_reserve_modal: false };
+    case ReserveActionTypes.ConfirmReserveClosed:
+      return { ...state };
+    case ReserveActionTypes.CloseReserveModal:
+      return { ...state, confirm_reserve_modal: false };
+    case ReserveActionTypes.ConfirmReserve:
       return {
         ...state,
-        open_modal: false,
-        available: action.payload.available
+        confirm_reserve_modal: false,
+        roomToAdd: action.payload.reserve
       };
     default:
       return state;
   }
 }
+
+export const {
+  selectAll,
+  selectEntities,
+  selectIds,
+  selectTotal
+} = adapter.getSelectors();

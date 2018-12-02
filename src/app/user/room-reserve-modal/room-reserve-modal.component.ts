@@ -1,10 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'app/reducers';
-import { selectReserveModalOpen } from '../user.selectors';
-import { CloseSearchModal, ConfirmSearchAvailable } from '../reserve.actions';
+import {
+  CloseSearchModal,
+  ConfirmSearchAvailable,
+  ConfirmReserveClosed
+} from '../reserve.actions';
+import {
+  selectReserveRequestssss,
+  selectReserveModalOpen,
+  selectReserveModalOpen2
+} from '../user.selectors';
 
 @Component({
   selector: 'app-room-reserve-modal',
@@ -14,23 +22,25 @@ import { CloseSearchModal, ConfirmSearchAvailable } from '../reserve.actions';
 export class RoomReserveModalComponent implements OnInit {
   open$: Observable<boolean>;
   form: FormGroup;
+  today = new Date();
 
   constructor(private store: Store<AppState>, private fb: FormBuilder) {
     this.form = this.fb.group({
       building: ['kbtg', [Validators.required, Validators.minLength(1)]],
       type: ['', [Validators.required, Validators.minLength(1)]],
-      capacity: [0],
+      capacity: [2],
       duration: [0.5],
-      start: ['', [Validators.required]]
+      start: [this.today, [Validators.required]]
     });
   }
 
   ngOnInit() {
     this.open$ = this.store.pipe(select(selectReserveModalOpen));
+    // this.open$ = of(true);
   }
 
-  closeModal(e) {
-    // this.store.dispatch(new AddRoomClose());
+  closeModal() {
+    this.store.dispatch(new ConfirmReserveClosed());
   }
 
   onSubmit(e) {

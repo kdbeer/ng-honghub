@@ -1,3 +1,4 @@
+import { ToastModule } from './../toast/toast.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RoomReserveComponent } from './room-reserve/room-reserve.component';
 import { NgModule } from '@angular/core';
@@ -13,13 +14,15 @@ import * as fromReserve from './reserve.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { ReserveEffects } from './reserve.effects';
 import { ReserveAbleComponent } from './reserve-able/reserve-able.component';
+import { ConfirmReserveModalComponent } from './confirm-reserve-modal/confirm-reserve-modal.component';
 
 @NgModule({
   declarations: [
     UserComponent,
     RoomReserveComponent,
     RoomReserveModalComponent,
-    ReserveAbleComponent
+    ReserveAbleComponent,
+    ConfirmReserveModalComponent
   ],
   imports: [
     CommonModule,

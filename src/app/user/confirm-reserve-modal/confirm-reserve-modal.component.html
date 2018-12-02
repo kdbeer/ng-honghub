@@ -1,0 +1,104 @@
+<!-- is-active -->
+
+<div class="modal animated fadeIn" [ngClass]="{ 'is-active': open$ | async }">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">จองห้อง</p>
+    </header>
+    <section class="modal-card-body">
+      <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">ชื่อผู้จอง</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="sis-fullwidth">
+                    <input
+                      formControlName="username"
+                      class="input"
+                      type="text"
+                      placeholder="ชื่อผู้จอง"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">เบอร์โทรศัพท์</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="sis-fullwidth">
+                    <input
+                      formControlName="phone"
+                      class="input"
+                      type="text"
+                      placeholder="เบอร์โทรศัพท์"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label subtitle is-6">หัวข้อประชุม</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="sis-fullwidth">
+                    <input
+                      formControlName="agenda"
+                      class="input"
+                      type="text"
+                      placeholder="หัวข้อประชุม (ถ้ามี)"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field is-grouped is-grouped-centered">
+            <p class="control">
+              <button
+                type="submit"
+                class="button is-primary"
+                [ngClass]="{ 'is-outlined': !form.valid }"
+              >
+                ยืนยันการจอง
+              </button>
+            </p>
+
+            <p class="control">
+              <button
+                type="button"
+                class="button is-outlined"
+                [ngClass]="{ 'is-outlined': !form.valid }"
+                (click)="close($event)"
+              >
+                ยกเลิก
+              </button>
+            </p>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>

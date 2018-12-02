@@ -1,4 +1,7 @@
-<div class="modal animated fadeIn" [ngClass]="{ 'is-active': open$ | async }">
+<div
+  class="modal animated fadeIn is-active"
+  [ngClass]="{ 'is-active': open$ | async }"
+>
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
@@ -63,7 +66,7 @@
                       class="input"
                       type="number"
                       placeholder="Text input"
-                      min="0"
+                      min="2"
                     />
                   </div>
                 </div>
@@ -84,8 +87,8 @@
                     <input
                       formControlName="start"
                       class="input"
-                      type="text"
-                      placeholder="Text input"
+                      type="datetime-local"
+                      value="{{ today }]"
                     />
                   </div>
                 </div>

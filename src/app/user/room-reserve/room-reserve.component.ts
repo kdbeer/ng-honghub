@@ -14,7 +14,6 @@ export class RoomReserveComponent implements OnInit {
   ngOnInit() {}
 
   searchPanelActivated(e) {
-    console.log(e);
     this.store.dispatch(new OpenSearchModal());
   }
 }

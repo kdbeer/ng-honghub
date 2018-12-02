@@ -12,16 +12,28 @@ export class UserComponent implements OnInit {
     { name: 'Room', prop: 'room' },
     { name: 'Start Time', prop: 'start_time' },
     { name: 'End Time', prop: 'end_time' },
-    { name: 'Reserver', prop: 'reserver' }
+    { name: 'Reserver', prop: 'reserver' },
+    { name: 'Status', prop: 'status' }
   ];
   rows: any;
   page: Page;
 
   constructor() {
     this.rows = [
-      { name: 'Austin', gender: 'Male', room: 'Swimlane' },
-      { name: 'Dany', gender: 'Male', room: 'KFC' },
-      { name: 'Molly', gender: 'Female', room: 'Burger King' }
+      {
+        room: 'Conference 3',
+        start_time: 'Dec 15, 2018, 9:00 PM',
+        end_time: 'Dec 15, 2018, 2:00 AM',
+        reserver: 'Kridsada Duangmala',
+        status: 'upcoming'
+      },
+      {
+        room: 'Conference 7',
+        start_time: 'Dec 01, 2018, 3:00 AM',
+        end_time: 'Dec 01, 2018, 4:00 AM',
+        reserver: 'Kridsada Duangmala',
+        status: 'upcoming'
+      }
     ];
     this.page = {
       size: 100,

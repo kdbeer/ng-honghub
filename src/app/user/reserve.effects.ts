@@ -5,11 +5,14 @@ import {
   SearchAvailableSuccess,
   ReserveActionTypes,
   ConfirmSearchAvailable,
-  SearchAvailableFailed
+  SearchAvailableFailed,
+  BackToHome,
+  ConfirmReserve
 } from './reserve.actions';
 import { Router } from '@angular/router';
 import { RoomsService } from 'app/rooms/services/rooms.service';
 import { IResponse } from 'app/rooms';
+import { ToastService } from 'app/toast/service/toast.service';
 
 @Injectable()
 export class ReserveEffects {
@@ -18,6 +21,14 @@ export class ReserveEffects {
     ofType<SearchAvailableSuccess>(ReserveActionTypes.SearchAvailableSuccess),
     map(() => {
       this.router.navigateByUrl('users/reserve-able');
+    })
+  );
+
+  @Effect({ dispatch: false })
+  backToHome$ = this.actions$.pipe(
+    ofType<BackToHome>(ReserveActionTypes.BackToHome),
+    map(() => {
+      this.router.navigateByUrl('users');
     })
   );
 
@@ -33,13 +44,24 @@ export class ReserveEffects {
       if (json.messageCode !== '00') {
         return new SearchAvailableFailed({ message: json.messageDescription });
       }
+      console.log(json.data);
       return new SearchAvailableSuccess({ available: json.data });
+    })
+  );
+
+  @Effect({ dispatch: false })
+  confirmReserve$ = this.actions$.pipe(
+    ofType<ConfirmReserve>(ReserveActionTypes.ConfirmReserve),
+    map(() => {
+      this.router.navigateByUrl('users');
+      this.ts.showSuccessMessage('บันทึกข้อมูลสำเร็จ');
     })
   );
 
   constructor(
     private actions$: Actions,
     private router: Router,
-    private room: RoomsService
+    private room: RoomsService,
+    private ts: ToastService
   ) {}
 }

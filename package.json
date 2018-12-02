@@ -30,6 +30,7 @@
     "@ngrx/store-devtools": "^7.0.0-beta.0",
     "@swimlane/ngx-datatable": "^14.0.0",
     "core-js": "^2.5.7",
+    "ng-pick-datetime": "^7.0.0",
     "node-sass": "^4.10.0",
     "npm-check-updates": "^2.15.0",
     "rxjs": "~6.3.3",

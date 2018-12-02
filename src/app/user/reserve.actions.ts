@@ -6,7 +6,14 @@ export enum ReserveActionTypes {
   CloseSearchModal = '[Reserve] Close Search Modal',
   ConfirmSearchAvailable = '[Reserve] Confirm Search Available',
   SearchAvailableSuccess = '[Reserve] Search Available Success',
-  SearchAvailableFailed = '[Reserve] Search Available Failed'
+  SearchAvailableFailed = '[Reserve] Search Available Failed',
+  RoomSelected = '[Reserve] Room Selected',
+  ReserveRequested = '[Reserve] Reserve Requested',
+  ReserveConfirm = '[Reserve] Reserve Confirm',
+  ConfirmReserveClosed = '[Reserve] Confirm Reserve Closed',
+  BackToHome = '[Reserve] Back To Home',
+  CloseReserveModal = '[Reserve] Close Reserve Modal',
+  ConfirmReserve = '[Reserve] Confirm Reserve'
 }
 
 export class LoadReserves implements Action {
@@ -36,10 +43,48 @@ export class SearchAvailableFailed implements Action {
   constructor(public payload: { message: string }) {}
 }
 
+export class RoomSelected implements Action {
+  readonly type = ReserveActionTypes.RoomSelected;
+  constructor(public payload: { selected: string[] }) {}
+}
+
+export class ReserveRequested implements Action {
+  readonly type = ReserveActionTypes.ReserveRequested;
+  constructor(public payload: { reserve: string[] }) {}
+}
+
+export class ReserveConfirm implements Action {
+  readonly type = ReserveActionTypes.ReserveConfirm;
+}
+
+export class ConfirmReserveClosed implements Action {
+  readonly type = ReserveActionTypes.ConfirmReserveClosed;
+}
+
+export class BackToHome implements Action {
+  readonly type = ReserveActionTypes.BackToHome;
+}
+
+export class CloseReserveModal implements Action {
+  readonly type = ReserveActionTypes.CloseReserveModal;
+}
+
+export class ConfirmReserve implements Action {
+  readonly type = ReserveActionTypes.ConfirmReserve;
+  constructor(public payload: { reserve: any }) {}
+}
+
 export type ReserveActions =
   | LoadReserves
   | OpenSearchModal
   | CloseSearchModal
   | ConfirmSearchAvailable
   | SearchAvailableSuccess
-  | SearchAvailableFailed;
+  | SearchAvailableFailed
+  | RoomSelected
+  | ReserveRequested
+  | ReserveConfirm
+  | ConfirmReserveClosed
+  | BackToHome
+  | CloseReserveModal
+  | ConfirmReserve;
