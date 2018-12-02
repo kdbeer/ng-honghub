@@ -1,3 +1,4 @@
+import { CloseReserveModal } from './../reserve.actions';
 import { AppState } from 'app/reducers';
 import { Store, select } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
@@ -34,6 +35,12 @@ export class ConfirmReserveModalComponent implements OnInit {
       return;
     }
 
-    this.store.dispatch(new ConfirmSearchAvailable({ json: e }));
+    console.log(e);
+    // this.store.dispatch(new ConfirmSearchAvailable({ json: e }));
+  }
+
+  close(e) {
+    console.log(e);
+    this.store.dispatch(new CloseReserveModal());
   }
 }

@@ -5,7 +5,8 @@ import {
   SearchAvailableSuccess,
   ReserveActionTypes,
   ConfirmSearchAvailable,
-  SearchAvailableFailed
+  SearchAvailableFailed,
+  BackToHome
 } from './reserve.actions';
 import { Router } from '@angular/router';
 import { RoomsService } from 'app/rooms/services/rooms.service';
@@ -21,6 +22,14 @@ export class ReserveEffects {
     })
   );
 
+  @Effect({ dispatch: false })
+  backToHome$ = this.actions$.pipe(
+    ofType<BackToHome>(ReserveActionTypes.BackToHome),
+    map(() => {
+      this.router.navigateByUrl('users');
+    })
+  );
+
   @Effect()
   searchAvailable$ = this.actions$.pipe(
     ofType<ConfirmSearchAvailable>(ReserveActionTypes.ConfirmSearchAvailable),
@@ -33,6 +42,7 @@ export class ReserveEffects {
       if (json.messageCode !== '00') {
         return new SearchAvailableFailed({ message: json.messageDescription });
       }
+      console.log(json.data);
       return new SearchAvailableSuccess({ available: json.data });
     })
   );
