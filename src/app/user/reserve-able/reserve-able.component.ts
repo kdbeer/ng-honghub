@@ -1,8 +1,12 @@
+import { AvalibleRoom } from './../reserve.reducer';
+import { BackToHome } from './../reserve.actions';
 import { AppState } from './../../reducers/index';
 import { Component, OnInit } from '@angular/core';
 import { Page } from 'app/models/page';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { ReserveRequested } from '../reserve.actions';
+import { Observable } from 'rxjs';
+import { selectData, selectAvailableRoomList } from '../user.selectors';
 
 @Component({
   selector: 'app-reserve-able',
@@ -21,6 +25,8 @@ export class ReserveAbleComponent implements OnInit {
   rows: any;
   page: Page;
   selected = [];
+  data$: Observable<AvalibleRoom[]>;
+  // rows:
 
   constructor(private store: Store<AppState>) {
     this.rows = [
@@ -36,7 +42,12 @@ export class ReserveAbleComponent implements OnInit {
     };
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.data$ = this.store.pipe(select(selectAvailableRoomList));
+    // this.store.pipe(select(selectAvailableRoomList)).subscribe(res => {
+    //   console.log(res);
+    // });
+  }
 
   reserveRequest() {
     if (this.selected.length <= 0) {
@@ -45,5 +56,10 @@ export class ReserveAbleComponent implements OnInit {
 
     const val: string[] = this.selected.map(s => s.name);
     this.store.dispatch(new ReserveRequested({ reserve: val }));
+  }
+
+  backToHome(e) {
+    console.log(e);
+    this.store.dispatch(new BackToHome());
   }
 }

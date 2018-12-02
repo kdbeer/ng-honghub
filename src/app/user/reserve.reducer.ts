@@ -71,7 +71,16 @@ export function reducer(
       return { ...state, confirm_reserve_modal: false };
     case ReserveActionTypes.ConfirmReserveClosed:
       return { ...state, confirm_reserve_modal: false };
+    case ReserveActionTypes.CloseReserveModal:
+      return { ...state, confirm_reserve_modal: false };
     default:
       return state;
   }
 }
+
+export const {
+  selectAll,
+  selectEntities,
+  selectIds,
+  selectTotal
+} = adapter.getSelectors();

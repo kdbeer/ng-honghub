@@ -15,7 +15,11 @@
             จองห้อง
           </a>
         </p>
-        <p class="control"><a class="button is-outlined"> ยกเลิก </a></p>
+        <p class="control">
+          <a class="button is-outlined" (click)="backToHome($event)">
+            ยกเลิก
+          </a>
+        </p>
       </div>
     </div>
   </div>
@@ -24,7 +28,7 @@
 <div class="main u-margin-top-small"></div>
 <ngx-datatable
   class="material"
-  [rows]="rows"
+  [rows]="data$ | async"
   [columnMode]="'force'"
   [headerHeight]="50"
   [footerHeight]="50"
