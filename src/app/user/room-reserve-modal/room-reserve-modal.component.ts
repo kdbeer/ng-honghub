@@ -1,10 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'app/reducers';
-import { selectReserveModalOpen } from '../user.selectors';
-import { CloseSearchModal, ConfirmSearchAvailable } from '../reserve.actions';
+import {
+  CloseSearchModal,
+  ConfirmSearchAvailable,
+  ConfirmReserveClosed
+} from '../reserve.actions';
+import {
+  selectReserveRequestssss,
+  selectReserveModalOpen,
+  selectReserveModalOpen2
+} from '../user.selectors';
 
 @Component({
   selector: 'app-room-reserve-modal',
@@ -27,10 +35,11 @@ export class RoomReserveModalComponent implements OnInit {
 
   ngOnInit() {
     this.open$ = this.store.pipe(select(selectReserveModalOpen));
+    // this.open$ = of(true);
   }
 
-  closeModal(e) {
-    // this.store.dispatch(new AddRoomClose());
+  closeModal() {
+    this.store.dispatch(new ConfirmReserveClosed());
   }
 
   onSubmit(e) {

@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { selectReserveRequest } from '../user.selectors';
+import { selectReserveRequestssss } from '../user.selectors';
 
 @Component({
   selector: 'app-confirm-reserve-modal',
@@ -23,8 +23,8 @@ export class ConfirmReserveModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.open$ = this.store.pipe(select(selectReserveRequest));
-    this.store.pipe(select(selectReserveRequest)).subscribe(res => {
+    this.open$ = this.store.pipe(select(selectReserveRequestssss));
+    this.store.pipe(select(selectReserveRequestssss)).subscribe(res => {
       console.log(res);
     });
   }
@@ -34,6 +34,6 @@ export class ConfirmReserveModalComponent implements OnInit {
       return;
     }
 
-    // this.store.dispatch(new ConfirmSearchAvailable({ json: e }));
+    this.store.dispatch(new ConfirmSearchAvailable({ json: e }));
   }
 }

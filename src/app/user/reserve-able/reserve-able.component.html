@@ -1,5 +1,4 @@
-<app-room-reserve-modal></app-room-reserve-modal>
-
+<app-confirm-reserve-modal></app-confirm-reserve-modal>
 <p class="subtitle is-4">ผลการค้นหาห้องที่ว่าง</p>
 
 <div class="card u-padding-small-1">
@@ -45,7 +44,8 @@
     [checkboxable]="true"
   >
   </ngx-datatable-column>
-  <ngx-datatable-column name="Name"></ngx-datatable-column>
-  <ngx-datatable-column name="Gender"></ngx-datatable-column>
-  <ngx-datatable-column name="Company"></ngx-datatable-column>
+  <ngx-datatable-column name="ชื่อห้อง"></ngx-datatable-column>
+  <ngx-datatable-column name="ตึก"></ngx-datatable-column>
+  <ngx-datatable-column name="ประเภทห้อง"></ngx-datatable-column>
+  <ngx-datatable-column name="ความจุคน"></ngx-datatable-column>
 </ngx-datatable>

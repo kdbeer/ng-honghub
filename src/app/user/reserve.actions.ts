@@ -9,7 +9,8 @@ export enum ReserveActionTypes {
   SearchAvailableFailed = '[Reserve] Search Available Failed',
   RoomSelected = '[Reserve] Room Selected',
   ReserveRequested = '[Reserve] Reserve Requested',
-  ReserveConfirm = '[Reserve] Reserve Confirm'
+  ReserveConfirm = '[Reserve] Reserve Confirm',
+  ConfirmReserveClosed = '[Reserve] Confirm Reserve Closed'
 }
 
 export class LoadReserves implements Action {
@@ -46,10 +47,15 @@ export class RoomSelected implements Action {
 
 export class ReserveRequested implements Action {
   readonly type = ReserveActionTypes.ReserveRequested;
+  constructor(public payload: { reserve: string[] }) {}
 }
 
 export class ReserveConfirm implements Action {
   readonly type = ReserveActionTypes.ReserveConfirm;
+}
+
+export class ConfirmReserveClosed implements Action {
+  readonly type = ReserveActionTypes.ConfirmReserveClosed;
 }
 
 export type ReserveActions =
@@ -61,4 +67,5 @@ export type ReserveActions =
   | SearchAvailableFailed
   | RoomSelected
   | ReserveRequested
-  | ReserveConfirm;
+  | ReserveConfirm
+  | ConfirmReserveClosed;

@@ -42,6 +42,8 @@ export class ReserveAbleComponent implements OnInit {
     if (this.selected.length <= 0) {
       return;
     }
-    this.store.dispatch(new ReserveRequested());
+
+    const val: string[] = this.selected.map(s => s.name);
+    this.store.dispatch(new ReserveRequested({ reserve: val }));
   }
 }
