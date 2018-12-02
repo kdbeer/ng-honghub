@@ -1,9 +1,5 @@
 import { AvalibleRoom } from './../reserve.reducer';
-import {
-  CloseReserveModal,
-  ConfirmSearchAvailable,
-  ConfirmReserve
-} from './../reserve.actions';
+import { CloseReserveModal, ConfirmReserve } from './../reserve.actions';
 import { AppState } from 'app/reducers';
 import { Store, select } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
