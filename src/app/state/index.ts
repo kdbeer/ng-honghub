@@ -1,8 +1,5 @@
-import {
-  ActionReducerMap,
-  MetaReducer
-} from '@ngrx/store';
 import { environment } from '../../environments/environment';
+import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 
 // tslint:disable-next-line:no-empty-interface
 export interface AppState {}

@@ -9,8 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'management',
-    loadChildren: './modules/mapping/mapping.module#MappingModule',
-    canActivate: [AuthGuard]
+    loadChildren: './modules/mapping/mapping.module#MappingModule'
   },
   {
     path: '',

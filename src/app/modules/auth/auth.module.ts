@@ -6,9 +6,9 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth.effects';
 import * as fromAuth from './auth.reducer';
-import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [LoginComponent],

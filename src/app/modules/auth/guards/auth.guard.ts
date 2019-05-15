@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
 import { isLoggedIn } from '../services/auth.selector';
-import { AppState } from 'app/reducers';
+import { AppState } from 'app/state';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
         console.log('route activated with auth ' + isLoggedIn);
 
         if (!loggedIn) {
-          this.router.navigateByUrl('/login'); // check authen and navigate login
+          this.router.navigateByUrl('/login'); // check authentication and navigate login
         }
       })
     );
