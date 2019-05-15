@@ -1,1 +1,258 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+.box-shadow {
+  box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
+}
+
+.u-padding-small {
+  padding: 15px 0;
+}
+
+.u-padding-small-1 {
+  padding: 15px;
+}
+
+.u-margin-top-small {
+  margin-top: 15px;
+}
+
+.modal {
+  z-index: 999999;
+}
+
+.modal-card {
+  border-radius: 5px;
+}
+
+.animated {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fromLeft {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.no-border-top {
+  border: 1px solid #e8ebef;
+  border-top: none;
+}
+
+.ngx-datatable {
+  box-shadow: none !important;
+  border: 1px solid #ccc;
+}
+
+.app-wrapper {
+  max-width: 1500px;
+  margin: 0px auto;
+}
+
+.required {
+  color: red;
+  margin-right: 3px;
+  font-weight: bold;
+}
+
+.info {
+  color: blue;
+  margin-right: 3px;
+  font-weight: bold;
+}
+
+.cdk-overlay-pane {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 999999999 !important;
+}
+
+.cdk-global-overlay-wrapper,
+.cdk-overlay-container {
+  z-index: 999999999 !important;
+}
+
+.input-group-text {
+  cursor: pointer;
+}
+
+$trash-color: #6c757d;
+.u-trash {
+  cursor: pointer;
+  color: $trash-color;
+
+  &:hover {
+    color: darken($color: $trash-color, $amount: 10);
+  }
+}
+
+.u-wrapper-padding {
+  padding: 1.5rem 3rem;
+}
+
+.u-wrapper-padding-small {
+  padding: 2rem 1.5rem;
+}
+
+.ng-select .ng-select-container {
+  min-height: 0 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  font-size: 0.875rem !important;
+}
+
+.ng-select.ng-select-single .ng-select-container {
+  height: auto !important;
+}
+
+// .form-control:disabled, .form-control[readonly] {
+//     background-color: #e9ecef;
+// }
+
+.ng-select.ng-select-disabled > .ng-select-container {
+  background-color: #e9ecef;
+}
+
+.form-control-plaintext.form-control:disabled {
+  padding-left: 0.5rem;
+  background-color: transparent;
+}
+
+.skip-validate {
+  border: 1px solid #cccccc !important;
+}
+
+.ng-invalid:not(form) {
+  border-radius: 5px !important;
+}
+
+.cal-time {
+  // width: 125px !important;
+}
+
+// .cal-event-container {
+//     margin-left: 125px !important;
+// }
+
+.u-margin-right-small {
+  margin-right: 1.5rem;
+}
+
+.u-margin-right-medium {
+  margin-right: 3rem;
+}
+
+// Custom for material
+.md-overlay-container {
+  position: fixed;
+  z-index: 1000;
+}
+
+.md-overlay-container,
+.md-global-overlay-wrapper {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.md-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  z-index: 9999999999 !important;
+}
+
+.open {
+  z-index: 9999999999 !important;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+}
+
+@page {
+  margin: 0mm !important; /* this affects the margin in the printer settings */
+}
+
+@media print {
+  @page {
+    margin: 0mm !important; /* this affects the margin in the printer settings */
+  }
+}
+
+.u-margin-right-tiny {
+  margin-right: 7px;
+}
+
+.u-max-width-medium {
+  max-width: 550px;
+}
+
+.app-router-link {
+  padding-left: 0;
+}
+
+.app-router-link li {
+  display: inline-block;
+  padding: 0 8px;
+}
+
+.app-router-link li:not(:last-child) {
+  border-right: 2px solid #ccc;
+}
+
+.app-router-link li:first-child {
+  padding-left: 0;
+}
