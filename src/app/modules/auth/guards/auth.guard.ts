@@ -8,8 +8,8 @@ import {
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
-import { AppState } from '../../reducers';
 import { isLoggedIn } from '../services/auth.selector';
+import { AppState } from 'app/reducers';
 
 @Injectable({
   providedIn: 'root'
