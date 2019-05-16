@@ -4,17 +4,16 @@ import { AuthGuard } from './modules/auth/guards/auth.guard';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: './modules/landing/landing.module#LandingModule'
+  },
+  {
     path: 'login',
     loadChildren: './modules/auth/auth.module#AuthModule'
   },
   {
     path: 'management',
     loadChildren: './modules/mapping/mapping.module#MappingModule'
-  },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
   }
 ];
 

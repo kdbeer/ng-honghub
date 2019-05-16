@@ -1,49 +1,55 @@
 <div class="columns">
-    <div class="column is-11">
-            <h1 class="title">  Book</h1>
-        <hr/>
-    </div>
-    <div class="column is-1">
-        <a (click)="actionModal('_search')" class="button is-info is-rounded">ค้นหาห้อง</a>
-    </div>
+  <div class="column is-11">
+    <h1 class="title">Book</h1>
+    <hr />
+  </div>
+  <div class="column is-1">
+    <a (click)="actionModal('_search')" class="button is-info is-rounded"
+      >ค้นหาห้อง</a
+    >
+  </div>
 </div>
 <div class="columns">
-    <div class="column is-12">
-        <div>
-            <table class="table is-bordered is-striped is-narrow is-hoverable">
-                <thead>
-                    <td>
-                        No.
-                    </td>
-                    <td></td>
-                </thead>
-                <tbody>
-                    <td>
-                        TEST
-                    </td>
-                    <td>
-                        <a class="button is-info is-rounded">View</a>
-                        <a class="button is-danger is-rounded">Cancel</a>
-                    </td>
-                </tbody>
-            </table>
-        </div>
+  <div class="column is-12">
+    <div>
+      <table class="table is-bordered is-striped is-narrow is-hoverable">
+        <thead>
+          <td>
+            No.
+          </td>
+          <td></td>
+        </thead>
+        <tbody>
+          <td>
+            TEST
+          </td>
+          <td>
+            <a class="button is-info is-rounded">View</a>
+            <a class="button is-danger is-rounded">Cancel</a>
+          </td>
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
 
-<div class="modal {{CheckModalSearch('_search')}} fateinna">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title">Modal title</p>
-            <button (click)="actionModal('_search')" class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-            <!-- Content ... -->
-        </section>
-        <footer class="modal-card-foot " style="justify-content: flex-end;">
-            <button class="button is-success ">Save changes</button>
-            <!-- <button class="button">Cancel</button> -->
-        </footer>
-    </div>
+<div class="modal {{ CheckModalSearch('_search') }} fateinna">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button
+        (click)="actionModal('_search')"
+        class="delete"
+        aria-label="close"
+      ></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot " style="justify-content: flex-end;">
+      <button class="button is-success ">Save changes</button>
+      <!-- <button class="button">Cancel</button> -->
+    </footer>
+  </div>
 </div>

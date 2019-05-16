@@ -1,0 +1,111 @@
+.landing {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #eeeeee;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+
+  .left-side {
+    grid-column: 1/4;
+    grid-row: 1/-1;
+    background-color: #262626;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(38, 38, 38, 1) 0%,
+      rgba(38, 38, 38, 0.958420868347339) 100%
+    );
+
+    // display: grid;
+    // grid-template-rows: repeat(12, 1fr);
+  }
+
+  .right-side {
+    width: 100%;
+    grid-column: 4/-1;
+    grid-row: 1/-1;
+    background-image: url('assets/imgs/landing-room.jpg');
+    background-size: cover;
+
+    .app {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .logo {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    padding-left: 50px;
+
+    img {
+      margin-top: 25px;
+      width: 40px;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+
+  .slogan {
+    grid-column: 1/4;
+    grid-row: 5/7;
+    padding: 0px 50px;
+    color: #eeeeee;
+  }
+
+  .show-more {
+    grid-column: 1/4;
+    grid-row: 10/11;
+  }
+
+  .social {
+    grid-column: 1/4;
+    grid-row: 11/12;
+  }
+}
+
+.text-secondary {
+  text-transform: uppercase;
+  font-family: 'Varela Round', sans-serif;
+  letter-spacing: 0.9rem;
+  font-size: 1.2rem;
+}
+
+.text-primary {
+  text-transform: uppercase;
+  font-family: 'Patua One', cursive;
+  font-size: 2rem;
+}
+
+.landing-page-button {
+  background-color: white;
+  padding: 8px 65px;
+  font-size: 1.1rem;
+  min-width: 200px;
+  border: 1px solid #eeeeee;
+  font-family: 'Abel', sans-serif;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}
+
+.menus {
+  grid-column: 8/12;
+  grid-row: 1/3;
+  margin-top: 25px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul li {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-family: 'Patua One', cursive;
+    color: #eeeeee;
+  }
+}
