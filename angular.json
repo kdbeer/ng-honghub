@@ -68,8 +68,8 @@
             "dev": {
               "optimization": true,
               "outputHashing": "all",
-              "outputPath": "dist_test",
-              "baseHref": "/backoffice-test/",
+              "outputPath": "dist",
+              "baseHref": "/",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
