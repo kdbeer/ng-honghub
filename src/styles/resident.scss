@@ -1,0 +1,52 @@
+.resident {
+  @include resident-grid();
+
+  background-color: #eee;
+  .resident__sidebar {
+    grid-row: 1/-1;
+    color: white;
+    overflow: hidden;
+    background-image: linear-gradient(
+      179.6deg,
+      rgb(0, 19, 26) -4.9%,
+      rgb(0, 77, 105) 108.4%
+    );
+
+    @include app-box-shadow();
+    &__logo {
+      position: relative;
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      cursor: pointer;
+
+      img {
+        width: 40px;
+      }
+    }
+
+    &__menu {
+      margin-top: 25px;
+      border-top: 2px solid rgb(0, 77, 105);
+      padding-top: 25px;
+      text-align: center;
+
+      ul li {
+        &not:first-child {
+          margin-top: 20px;
+        }
+
+        img {
+          cursor: pointer;
+          width: 30px;
+          transition: 0.2s;
+
+          &:hover {
+            width: 38px;
+            transition: 0.2s;
+          }
+        }
+      }
+    }
+  }
+}

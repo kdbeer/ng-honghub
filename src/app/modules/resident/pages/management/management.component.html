@@ -1,0 +1,10 @@
+<div class="app-page-header">Room Management</div>
+
+<div class="resident-management u-margin-top-medium">
+  <div class="building" *ngFor="let item of buildings">
+    <div class="building__image">
+      <img src="{{ item.image }}" alt="{{ item.building_name }}" />
+    </div>
+    <div class="building__label">{{ item.building_name }}</div>
+  </div>
+</div>

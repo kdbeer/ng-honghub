@@ -90,6 +90,12 @@
   font-weight: bold;
   color: black;
   cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    padding-left: 80px;
+    transition: 0.2s;
+  }
 }
 
 .menus {
@@ -108,5 +114,11 @@
     font-family: 'Patua One', cursive;
     cursor: pointer;
     color: #eeeeee;
+    transition: 0.2s;
+
+    &:hover {
+      margin-top: 7px;
+      transition: 0.2s;
+    }
   }
 }

@@ -6,13 +6,18 @@
 
 @import '~skeleton-css/css/skeleton.css';
 
-// RESET
+// Local style
+@import './styles/typography.scss';
+@import './styles/menu.scss';
+@import './styles/common.scss';
+@import './styles/resident.scss';
+@import './styles/utility.scss';
 
+// RESET
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html,
 body,
 div,

@@ -1,0 +1,19 @@
+@mixin app-grid() {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  min-height: 100vh;
+  height: auto;
+}
+
+@mixin resident-grid() {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  // grid-template-rows: repeat(12, 1fr);
+
+  min-height: 100vh;
+}
+
+@mixin app-box-shadow() {
+  box-shadow: 1px 0px 15px rgba($color: #000000, $alpha: 0.4);
+}

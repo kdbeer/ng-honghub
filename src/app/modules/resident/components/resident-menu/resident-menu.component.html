@@ -1,0 +1,48 @@
+<div class="resident">
+  <div class="resident__sidebar">
+    <div class="resident__sidebar__logo">
+      <img
+        src="assets/imgs/logo.png"
+        alt="H"
+        [routerLink]="['/']"
+        routerLinkActive="router-link-active"
+      />
+    </div>
+    <div class="resident__sidebar__menu">
+      <ul>
+        <li>
+          <img
+            src="assets/icons/alarm.png"
+            alt="H"
+            [routerLink]="['/resident/reserve']"
+            routerLinkActive="router-link-active"
+          />
+        </li>
+        <li>
+          <img
+            src="assets/icons/message.png"
+            alt="H"
+            [routerLink]="['/resident/message']"
+            routerLinkActive="router-link-active"
+          />
+        </li>
+        <li>
+          <img
+            src="assets/icons/manage.png"
+            alt="manage"
+            [routerLink]="['/resident/management']"
+            routerLinkActive="router-link-active"
+          />
+        </li>
+        <li>
+          <img
+            src="assets/icons/report.png"
+            [routerLink]="['/resident/report']"
+            alt="report"
+            routerLinkActive="router-link-active"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

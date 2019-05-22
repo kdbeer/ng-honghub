@@ -1,0 +1,31 @@
+.resident-management {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+
+  .building {
+    width: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+    height: 350px;
+    box-shadow: 0px 0px 7px rgba($color: #262626, $alpha: 0.4);
+
+    img {
+      width: 100%;
+    }
+
+    &__image {
+      height: 255px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba($color: #262626, $alpha: 0.2);
+    }
+
+    &__label {
+      padding: 8px 15px;
+      font-size: 1.25rem;
+      font-family: 'Cabin Condensed', sans-serif;
+      color: rgba($color: #262626, $alpha: 0.8);
+    }
+  }
+}
