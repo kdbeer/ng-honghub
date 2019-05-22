@@ -8,10 +8,6 @@ const routes: Routes = [
     loadChildren: './modules/landing/landing.module#LandingModule'
   },
   {
-    path: 'login',
-    loadChildren: './modules/auth/auth.module#AuthModule'
-  },
-  {
     path: 'auth',
     loadChildren: './modules/auth/auth.module#AuthModule'
   },

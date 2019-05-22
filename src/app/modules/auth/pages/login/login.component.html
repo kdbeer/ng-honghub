@@ -1,44 +1,40 @@
-<section class="bg-loop hero is-fullheight">
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <div class="column is-4 is-offset-4">
-                <h3 class="title has-text-grey">
-                    <figure class="avatar"><img src="assets/imgs/logo.jpg"/></figure>
-                </h3>
-                <div class="box">
-                    <form [formGroup]="_auth" (ngSubmit)="login()">
-                        <div class="field">
-                            <div class="control">
-                                <input
-                                    class="input is-large"
-                                    formControlName="username"
-                                    type="text"
-                                    placeholder="User"
-                                    autofocus=""
-                                    required/>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <input
-                                    class="input is-large"
-                                    formControlName="password"
-                                    type="password"
-                                    placeholder=" Password"
-                                    required/>
-                            </div>
-                        </div>
-
-                        <button
-                            [disabled]="_auth.invalid"
-                            type="submit"
-                            class="button is-block is-success is-large is-fullwidth {{Checkloading()}}">
-                            Sign in
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="app-wrapper app-sign-in">
+  <form [formGroup]="form" class="form-sign-in" (ngSubmit)="login()">
+    <div class="form-header">
+      <span class="form-header">Sign In</span>
     </div>
-</section>
+
+    <div class="row">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        class="u-full-width"
+        formControlName="username"
+        id="username"
+      />
+    </div>
+
+    <div class="row">
+      <label for="name">Password</label>
+      <input
+        type="password"
+        class="u-full-width"
+        formControlName="password"
+        id="password"
+      />
+    </div>
+
+    <div class="row u-text-center footer">
+      <input class="button-primary" type="submit" value="Sign In" />
+    </div>
+
+    <div class="row u-text-center">
+      <span
+        >Not already have account?
+        <a [routerLink]="['/auth/signup']" routerLinkActive="router-link-active"
+          >sign up</a
+        >
+      </span>
+    </div>
+  </form>
+</div>
