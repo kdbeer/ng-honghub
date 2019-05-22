@@ -1,0 +1,7 @@
+Sign Up
+  - username
+  - password
+  - confirm-password
+
+  - name
+  - purpose

@@ -4,6 +4,8 @@
 @import '~@swimlane/ngx-datatable/release/themes/material.css';
 @import '~@swimlane/ngx-datatable/release/assets/icons.css';
 
+@import '~skeleton-css/css/skeleton.css';
+
 // RESET
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -18,12 +20,6 @@ span,
 applet,
 object,
 iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 p,
 blockquote,
 pre,
@@ -50,19 +46,7 @@ sub,
 sup,
 tt,
 var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
 fieldset,
-form,
-label,
 legend,
 table,
 caption,
@@ -389,4 +373,12 @@ $trash-color: #6c757d;
 
 .app-router-link li:first-child {
   padding-left: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.u-text-center {
+  text-align: center;
 }

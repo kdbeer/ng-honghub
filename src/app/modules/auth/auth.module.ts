@@ -9,15 +9,17 @@ import * as fromAuth from './auth.reducer';
 import { AuthGuard } from './guards/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { MainModule } from '../main/main.module';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, SignupComponent],
   imports: [
+    MainModule,
     CommonModule,
     AuthRoutingModule,
     EffectsModule.forFeature([AuthEffects]),
-    StoreModule.forFeature('auth', fromAuth.reducer),
-    ReactiveFormsModule
+    StoreModule.forFeature('auth', fromAuth.reducer)
   ]
 })
 export class AuthModule {

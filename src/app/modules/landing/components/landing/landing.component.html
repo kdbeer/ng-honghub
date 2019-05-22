@@ -19,8 +19,12 @@
     <ul>
       <li>About Us</li>
       <li>Contact</li>
-      <li>Resident</li>
-      <li>Sign Up</li>
+      <li [routerLink]="['/resident']" routerLinkActive="router-link-active">
+        Resident
+      </li>
+      <li [routerLink]="['/auth/signup']" routerLinkActive="router-link-active">
+        Sign Up
+      </li>
     </ul>
   </div>
 

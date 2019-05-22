@@ -12,8 +12,16 @@ const routes: Routes = [
     loadChildren: './modules/auth/auth.module#AuthModule'
   },
   {
+    path: 'auth',
+    loadChildren: './modules/auth/auth.module#AuthModule'
+  },
+  {
     path: 'management',
     loadChildren: './modules/mapping/mapping.module#MappingModule'
+  },
+  {
+    path: 'resident',
+    loadChildren: './modules/resident/resident.module#ResidentModule'
   }
 ];
 

@@ -1,0 +1,74 @@
+<div class="app-wrapper sign-up">
+  <div class="info"></div>
+  <div class="form-sign-up">
+    <form [formGroup]="form" (ngSubmit)="signup()">
+      <div class="ro form-header">
+        <span>Sign Up</span>
+      </div>
+
+      <div class="row">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="u-full-width"
+          formControlName="username"
+          id="username"
+        />
+      </div>
+
+      <div class="row">
+        <label for="name">Password</label>
+        <input
+          type="password"
+          class="u-full-width"
+          formControlName="password"
+          id="name"
+        />
+      </div>
+
+      <div class="row">
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          class="u-full-width"
+          formControlName="confirm_password"
+          id="confirm-password"
+        />
+      </div>
+
+      <div class="row">
+        <label for="display_name">Display Name</label>
+        <input
+          type="text"
+          class="u-full-width"
+          formControlName="display_name"
+          id="display_name"
+        />
+      </div>
+
+      <div class="row">
+        <label for="purpose">You Want To</label>
+        <select class="u-full-width" id="purpose">
+          <option *ngFor="let item of purpose" [value]="item.name">{{
+            item.text
+          }}</option>
+        </select>
+      </div>
+
+      <div class="row u-text-center">
+        <input class="button-primary" type="submit" value="Submit" />
+      </div>
+
+      <div class="row u-text-center">
+        <span
+          >Already have account?
+          <a
+            [routerLink]="['/auth/sign-in']"
+            routerLinkActive="router-link-active"
+            >sign in</a
+          >
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
