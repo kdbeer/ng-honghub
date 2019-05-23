@@ -13,6 +13,7 @@
 
     img {
       width: 100%;
+      height: 350px;
     }
 
     &__image {
@@ -28,4 +29,9 @@
       color: rgba($color: #262626, $alpha: 0.8);
     }
   }
+}
+
+.cover {
+  width: 260px;
+  object-fit: cover;
 }

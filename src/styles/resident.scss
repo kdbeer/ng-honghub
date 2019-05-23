@@ -3,6 +3,10 @@
 
   background-color: #eee;
   .resident__sidebar {
+    position: fixed;
+    width: 75px;
+    min-height: 100vh;
+
     grid-row: 1/-1;
     color: white;
     overflow: hidden;
