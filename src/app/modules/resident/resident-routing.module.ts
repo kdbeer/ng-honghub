@@ -55,6 +55,17 @@ const routes: Routes = [
         outlet: 'resident'
       }
     ]
+  },
+  {
+    path: 'register',
+    component: ResidentComponent,
+    children: [
+      {
+        path: '',
+        component: RegisterResidentComponent,
+        outlet: 'resident'
+      }
+    ]
   }
 ];
 

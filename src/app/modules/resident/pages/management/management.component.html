@@ -1,9 +1,22 @@
 <div class="app-page-header">Room Management</div>
 
 <div class="resident-management u-margin-top-small">
+  <div class="building" (click)="register()">
+    <div class="building__image add-new">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThhW8bX5auDzI85JQ8qA7aDgJWSkek7qmE32YCa0UYdJfCSuA4"
+      />
+    </div>
+    <div class="building__label">Add New Building</div>
+  </div>
+
   <div class="building" *ngFor="let item of buildings">
     <div class="building__image">
-      <img class="cover" src="{{ item.image }}" alt="{{ item.building_name }}" />
+      <img
+        class="cover"
+        src="{{ item.image }}"
+        alt="{{ item.building_name }}"
+      />
     </div>
     <div class="building__label">{{ item.building_name }}</div>
   </div>

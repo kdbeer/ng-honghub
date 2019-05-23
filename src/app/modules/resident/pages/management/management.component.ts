@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface Building {
   building_id: string;
@@ -28,7 +29,7 @@ export interface Address {
 export class ManagementComponent implements OnInit {
   buildings: Building[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.buildings = [
       {
         building_id: 'B000000001001',
@@ -89,4 +90,8 @@ export class ManagementComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  register() {
+    this.router.navigateByUrl('resident/register');
+  }
 }
