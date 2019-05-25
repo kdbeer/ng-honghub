@@ -1,4 +1,25 @@
 .app-page-header {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'Overpass', sans-serif;
+}
+
+.form-header {
+  &-primary {
+    font-family: 'Overpass', sans-serif;
+    color: #000b31;
+    font-weight: bold;
+    font-size: 1.75rem;
+  }
+
+  &-secondary {
+    color: #454545;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+}
+
+label {
+  color: #454545;
+  font-size: 1.35rem;
 }

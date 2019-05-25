@@ -1,39 +1,77 @@
-<p>
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register
-  registerregister register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  registerregister register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  registerregister register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  registerregister register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register register register register register register register register
-  register
-</p>
+<div class="register-header">
+  <div class="app-page-header">เพิ่มตึกใหม่</div>
+</div>
+
+<div class="register">
+  <!-- The above form looks like this -->
+  <form [formGroup]="form">
+    <div class="form-header-primary">รายละเอียดของตึก</div>
+    <div class="row  u-margin-top-small">
+      <div class="six columns">
+        <label>ชื่อตึก</label>
+        <input class="u-full-width" type="text" formControlName="name" />
+      </div>
+      <div class="six columns">
+        <label>จำนวนชั้น</label>
+        <input
+          class="u-full-width"
+          type="number"
+          formControlName="number_of_floors"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="six columns">
+        <label>ขนาด</label>
+        <select class="u-full-width">
+          <option>-- เลือกขนาด --</option>
+          <option value="small">เล็ก ( น้อยกว่า 10 ห้อง )</option>
+          <option value="medium">กลาง ( น้อยกว่า 30 ห้อง )</option>
+          <option value="big">ใหญ่ ( มากกว่า 30 ห้อง )</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>คำอธิบาย</label>
+      <textarea formControlName="description" class="u-full-width"></textarea>
+    </div>
+
+    <div class="form-header-primary u-margin-top-medium">ตำแน่งที่ตั้ง</div>
+    <div class="row u-margin-top-small">
+      <div class="six columns">
+        <label>ที่อยู่</label>
+        <textarea formControlName="address" class="u-full-width"></textarea>
+      </div>
+      <div class="six columns">
+        <label>อำเภอ</label>
+        <input class="u-full-width" type="text" formControlName="city" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="six columns">
+        <label>จังหวัด</label>
+        <input class="u-full-width" type="text" formControlName="province" />
+      </div>
+      <div class="six columns">
+        <label>ประเทศ</label>
+        <input class="u-full-width" type="text" formControlName="nation" />
+      </div>
+    </div>
+
+    <div class="row u-margin-top-medium">
+      <input
+        class="button-primary u-margin-right-small"
+        type="submit"
+        value="เพิ่ม"
+      />
+      <input class="button-secondary" type="button" value="ยกเลิก" />
+    </div>
+  </form>
+
+  <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
+
+  <!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
+</div>

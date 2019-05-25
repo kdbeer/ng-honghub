@@ -10,12 +10,19 @@ import { ReportComponent } from './pages/report/report.component';
 import { ReserveComponent } from './pages/reserve/reserve.component';
 import { NotificationComponent } from './pages/notification/notification.component';
 import { MessageComponent } from './pages/message/message.component';
+import { MainModule } from '../main/main.module';
 
 @NgModule({
-  declarations: [RegisterResidentComponent, ManagementComponent, ResidentMenuComponent, ResidentComponent, ReportComponent, ReserveComponent, NotificationComponent, MessageComponent],
-  imports: [
-    CommonModule,
-    ResidentRoutingModule
-  ]
+  declarations: [
+    RegisterResidentComponent,
+    ManagementComponent,
+    ResidentMenuComponent,
+    ResidentComponent,
+    ReportComponent,
+    ReserveComponent,
+    NotificationComponent,
+    MessageComponent
+  ],
+  imports: [CommonModule, ResidentRoutingModule, MainModule]
 })
-export class ResidentModule { }
+export class ResidentModule {}
