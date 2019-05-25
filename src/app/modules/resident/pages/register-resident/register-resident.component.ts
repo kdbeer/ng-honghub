@@ -14,6 +14,7 @@ export class RegisterResidentComponent implements OnInit {
       name: [null],
       number_of_floor: [null],
       size: [null],
+      type: [null],
       description: [null],
       image: [null],
       address: [null],

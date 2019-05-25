@@ -1,15 +1,15 @@
 .resident-management {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-gap: 25px;
 
   .building {
     width: 100%;
     background-color: #ffffff;
     overflow: hidden;
-    height: 300px;
-    box-shadow: 0px 0px 7px rgba($color: #262626, $alpha: 0.4);
+    height: 250px;
+    box-shadow: 0px 0px 3px rgba($color: #262626, $alpha: 0.4);
     cursor: pointer;
 
     img {
@@ -24,7 +24,7 @@
     }
 
     &__image {
-      height: 225px;
+      height: 190px;
       overflow: hidden;
       border-bottom: 1px solid rgba($color: #262626, $alpha: 0.2);
     }
