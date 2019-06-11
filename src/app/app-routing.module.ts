@@ -5,19 +5,19 @@ import { AuthGuard } from './modules/auth/guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: './modules/landing/landing.module#LandingModule'
+    loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
   },
   {
     path: 'auth',
-    loadChildren: './modules/auth/auth.module#AuthModule'
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: 'management',
-    loadChildren: './modules/mapping/mapping.module#MappingModule'
+    loadChildren: () => import('./modules/mapping/mapping.module').then(m => m.MappingModule)
   },
   {
     path: 'resident',
-    loadChildren: './modules/resident/resident.module#ResidentModule'
+    loadChildren: () => import('./modules/resident/resident.module').then(m => m.ResidentModule)
   }
 ];
 
