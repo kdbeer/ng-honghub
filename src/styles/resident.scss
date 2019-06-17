@@ -49,6 +49,12 @@
             width: 38px;
             transition: 0.2s;
           }
+
+          &:active {
+            transform: scale(0.99);
+            transition: 0.2s;
+            outline: none;
+          }
         }
       }
     }
