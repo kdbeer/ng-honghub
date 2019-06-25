@@ -9,6 +9,7 @@
     "build-dev": "ng build -c dev",
     "build-sit": "ng build -c sit",
     "build-prod": "ng build -c production",
+    "deps3": "npm run build-prod && aws s3 cp ./dist/ s3://ng-honghub --recursive --acl public-read",
     "build-stats": "ng build --prod --aot --build-optimizer --stats-json",
     "bundle-analyse": "webpack-bundle-analyzer dist/stats.json",
     "bundle-stats-analyse": "npm run build-stats && npm run bundle-analyse",
