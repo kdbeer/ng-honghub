@@ -11,6 +11,10 @@ import { ReserveComponent } from './pages/reserve/reserve.component';
 import { NotificationComponent } from './pages/notification/notification.component';
 import { MessageComponent } from './pages/message/message.component';
 import { MainModule } from '../main/main.module';
+import { StoreModule } from '@ngrx/store';
+import * as fromResident from './resident.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { ResidentEffects } from './resident.effects';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,12 @@ import { MainModule } from '../main/main.module';
     NotificationComponent,
     MessageComponent
   ],
-  imports: [CommonModule, ResidentRoutingModule, MainModule]
+  imports: [
+    CommonModule,
+    ResidentRoutingModule,
+    MainModule,
+    StoreModule.forFeature('resident', fromResident.reducer),
+    EffectsModule.forFeature([ResidentEffects])
+  ]
 })
 export class ResidentModule {}

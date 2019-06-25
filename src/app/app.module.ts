@@ -12,12 +12,14 @@ import { AuthGuard } from './modules/auth/guards/auth.guard';
 import * as fromGlobal from './global.reducer';
 import { GlobalEffects } from './global.effects';
 import { metaReducers, reducers } from './state';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     EffectsModule.forRoot([]),
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],

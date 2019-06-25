@@ -77,14 +77,16 @@
     <div class="row u-margin-top-medium">
       <input
         class="button-primary u-margin-right-small"
-        type="submit"
+        type="button"
         value="เพิ่ม"
+        (click)="submit()"
       />
-      <input class="button-secondary" type="button" value="ยกเลิก" />
+      <input
+        class="button-secondary"
+        type="button"
+        value="ยกเลิก"
+        (click)="cancel()"
+      />
     </div>
   </form>
-
-  <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
-
-  <!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
 </div>
