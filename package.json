@@ -13,6 +13,7 @@
     "build-stats": "ng build --prod --aot --build-optimizer --stats-json",
     "bundle-analyse": "webpack-bundle-analyzer dist/stats.json",
     "bundle-stats-analyse": "npm run build-stats && npm run bundle-analyse",
+    "build-aws": "npm run build-prod &&  aws s3 cp ./dist s3://ng-honghub/ --recursive --acl public-read --region ap-southeast-1",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
