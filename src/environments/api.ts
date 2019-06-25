@@ -1,4 +1,5 @@
 export const api = {
   login: 'auth/login',
-  register_resident: 'resident/register'
+  REGISTER_RESIDENT: 'resident/register',
+  LIST_RESIDENT: 'resident/building/list'
 };

@@ -17,3 +17,10 @@ export interface IResponse {
   messageDescription: string;
   data: any;
 }
+
+export interface IResponseWithTotal {
+  messageCode: string;
+  messageDescription: string;
+  data: any;
+  total: number;
+}

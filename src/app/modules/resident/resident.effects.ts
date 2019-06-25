@@ -3,7 +3,9 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
   ResidentActionTypes,
   RegisterResidentRequest,
-  RegisterResidentSuccess
+  RegisterResidentSuccess,
+  ListResidentRequest,
+  ListResidentSuccess
 } from './resident.actions';
 import { map } from 'rxjs/internal/operators/map';
 import { mergeMap } from 'rxjs/operators';
@@ -37,6 +39,18 @@ export class ResidentEffects {
     ),
     map(json => {
       this.router.navigateByUrl('resident/management');
+    })
+  );
+
+  @Effect()
+  listResidentRequest$ = this.actions$.pipe(
+    ofType<ListResidentRequest>(ResidentActionTypes.ListResidentRequest),
+    mergeMap(action => this.rs.listResident(action.payload.json)),
+    map(res => {
+      if (res.messageCode !== '00') {
+        return new NoopAction();
+      }
+      return new ListResidentSuccess({ data: res.data, total: res.total });
     })
   );
 

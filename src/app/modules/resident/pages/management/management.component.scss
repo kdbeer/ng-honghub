@@ -43,6 +43,11 @@
   object-fit: cover;
 }
 
+.no-cover {
+  width: 75%;
+  height: auto;
+}
+
 .add-new {
   display: flex;
   justify-content: center;

@@ -15,14 +15,21 @@
   <span class="form-header-primary">Resident ของคุณ</span>
 </div>
 <div class="resident-management u-margin-top-small">
-  <div class="building" *ngFor="let item of buildings">
+  <div class="building" *ngFor="let item of building$ | async">
     <div class="building__image">
       <img
         class="cover"
-        src="{{ item.image }}"
-        alt="{{ item.building_name }}"
+        *ngIf="item.images && item.images.length > 0"
+        src="{{ item.images[0] }}"
+        alt="{{ item.name }}"
+      />
+      <img
+        class="no-cover"
+        *ngIf="!item.images || item.images.length >= 0"
+        src="http://pic.90sjimg.com/design/00/60/71/33/592b7a5f3ec41.png"
+        alt="{{ item.name }}"
       />
     </div>
-    <div class="building__label">{{ item.building_name }}</div>
+    <div class="building__label">{{ item.name }}</div>
   </div>
 </div>

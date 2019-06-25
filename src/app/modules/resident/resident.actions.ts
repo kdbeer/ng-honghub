@@ -3,7 +3,9 @@ import { Action } from '@ngrx/store';
 export enum ResidentActionTypes {
   LoadResidents = '[Resident] Load Residents',
   RegisterResidentRequest = '[Resident] Register Resident Request',
-  RegisterResidentSuccess = '[Resident] Register Resident Success'
+  RegisterResidentSuccess = '[Resident] Register Resident Success',
+  ListResidentRequest = '[Resident] List Resident Request',
+  ListResidentSuccess = '[Resident] List Resident Success'
 }
 
 export class LoadResidents implements Action {
@@ -20,7 +22,19 @@ export class RegisterResidentSuccess implements Action {
   constructor(public payload: { json: any }) {}
 }
 
+export class ListResidentRequest implements Action {
+  readonly type = ResidentActionTypes.ListResidentRequest;
+  constructor(public payload: { json: any }) {}
+}
+
+export class ListResidentSuccess implements Action {
+  readonly type = ResidentActionTypes.ListResidentSuccess;
+  constructor(public payload: { data: any; total: number }) {}
+}
+
 export type ResidentActions =
   | LoadResidents
   | RegisterResidentRequest
-  | RegisterResidentSuccess;
+  | RegisterResidentSuccess
+  | ListResidentRequest
+  | ListResidentSuccess;

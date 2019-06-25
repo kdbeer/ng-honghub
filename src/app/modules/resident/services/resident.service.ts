@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IResponse } from 'app/modules/main/models/http-interface';
+import {
+  IResponse,
+  IResponseWithTotal
+} from 'app/modules/main/models/http-interface';
 import { environment } from 'environments/environment';
 import { api } from 'environments/api';
 
@@ -12,7 +15,14 @@ export class ResidentService {
 
   registerResident(json) {
     return this.http.post<IResponse>(
-      environment.url + api.register_resident,
+      environment.url + api.REGISTER_RESIDENT,
+      json
+    );
+  }
+
+  listResident(json) {
+    return this.http.post<IResponseWithTotal>(
+      environment.url + api.LIST_RESIDENT,
       json
     );
   }

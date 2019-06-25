@@ -10,7 +10,14 @@ import { ReportComponent } from './pages/report/report.component';
 const routes: Routes = [
   {
     path: '',
-    component: ResidentComponent
+    component: ResidentComponent,
+    children: [
+      {
+        path: '',
+        component: ManagementComponent,
+        outlet: 'resident'
+      }
+    ]
   },
   {
     path: 'reserve',
