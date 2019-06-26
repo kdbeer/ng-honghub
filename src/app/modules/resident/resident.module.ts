@@ -28,9 +28,8 @@ import { ResidentEffects } from './resident.effects';
     MessageComponent
   ],
   imports: [
-    CommonModule,
-    ResidentRoutingModule,
     MainModule,
+    ResidentRoutingModule,
     StoreModule.forFeature('resident', fromResident.reducer),
     EffectsModule.forFeature([ResidentEffects])
   ]
